@@ -1,0 +1,205 @@
+{
+    "name": "list",
+    "title": "Read-only Master Detail",
+    "description": "",
+    "type": "object",
+    "properties": [
+        {
+            "name": "name",
+            "title": "Name",
+            "type": "string",
+            "description": "How do you want to name your list?",
+            "required": "required",
+            "default": "list"
+        },
+        {
+            "name": "parent",
+            "type": "string",
+            "description": "To which view do you want to add the list?",
+            "enum": [],
+            "required": "requiredCli",
+            "ref": "kendo-ui-mobile:view"
+        },
+        {
+            "name": "dataProvider",
+            "group": "[2]Data Binding",
+            "type": "string",
+            "title": "Provider",
+            "editor": "DataProviderEditor",
+            "description": "To which data provider do you want to bind the list?",
+            "note": "To manage Data Providers, go to the Data Tab.",
+            "required": "required",
+            "enum": [],
+            "ref": "kendo-ui-mobile:dataProvider"
+        },
+        {
+            "name": "collection",
+            "group": "[2]Data Binding",
+            "title": "Content type",
+            "editor": "DataProviderTypeEditor",
+            "type": "string",
+            "description": "What is the name of your data collection?",
+            "note": "To manage Data Providers, go to the Data Tab.",
+            "required": "requiredDependent",
+            "default": "Activities"
+        },
+        {
+            "name": "iconField",
+            "type": "boolean",
+            "group": "[3]Item Template",
+            "title": "Icon",
+            "editor": "CheckboxEditor",
+            "required": "requiredOptional",
+            "description": "Do you want to add an icon to every item?"
+        },
+        {
+            "name": "imageField",
+            "type": "string",
+            "group": "[3]Item Template",
+            "title": "Image",
+            "editor": "DataProviderFieldEditor",
+            "description": "Which field of the data collection do you want to use as image? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "headerField",
+            "group": "[3]Item Template",
+            "title": "Heading text",
+            "editor": "DataProviderFieldEditor",
+            "type": "string",
+            "description": "Which field of the data collection do you want to use as heading text?",
+            "required": "requiredDependent",
+            "default": "Text"
+        },
+        {
+            "name": "subHeaderField",
+            "group": "[3]Item Template",
+            "title": "Subheading text",
+            "editor": "DataProviderFieldEditor",
+            "type": "string",
+            "description": "Which field of the data collection do you want to use as subheading text? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "masterDetails",
+            "group": "[4]Master Detail",
+            "title": "Master detail",
+            "editor": "ToggleButtonEditor",
+            "type": "boolean",
+            "required": "required",
+            "description": "Do you want to enable a master-detail interface?",
+            "hint": "Show a master list and the details for the currently selected item.",
+            "textoff": "Enable details view",
+            "texton": "Disable details view",
+            "default": false
+        },
+        {
+            "name": "detailHeaderField",
+            "group": "[4]Master Detail",
+            "title": "Heading text",
+            "editor": "DataProviderFieldEditor",
+            "type": "string",
+            "description": "Which field of the data collection do you want to use as heading text in the details view? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "detailSubHeaderField",
+            "group": "[4]Master Detail",
+            "title": "Subheading text",
+            "editor": "DataProviderFieldEditor",
+            "type": "string",
+            "description": "Which field of the data collection do you want to use as subheading text in the details view? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "detailDescriptionField",
+            "group": "[4]Master Detail",
+            "title": "Description",
+            "editor": "DataProviderFieldEditor",
+            "type": "string",
+            "description": "Which field of the data collection do you want to use as description in the details view? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "detailImageField",
+            "type": "string",
+            "group": "[4]Master Detail",
+            "title": "Image",
+            "editor": "DataProviderFieldEditor",
+            "description": "Which field of the data collection do you want to use as image in the details view? Leave empty to omit.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "pullToRefresh",
+            "title": "Pull to refresh",
+            "editor": "CheckboxEditor",
+            "group": "[6]Configuration",
+            "type": "boolean",
+            "description": "Do you want to enable pull-to-refresh functionality?",
+            "hint": "Enable manual refresh of the list data by pulling the view down from the top.",
+            "required": "required",
+            "default": false
+        },
+        {
+            "name": "endlessScroll",
+            "title": "Load on demand",
+            "editor": "CheckboxEditor",
+            "group": "[6]Configuration",
+            "type": "boolean",
+            "description": "Do you want to enable endless scrolling?",
+            "hint": "Enable loading the next page of data when the user scrolls near the bottom of the view.",
+            "required": "required",
+            "default": false
+        },
+        {
+            "name": "filterField",
+            "title": "Filtering",
+            "editor": "DataProviderTextFieldEditor",
+            "group": "[6]Configuration",
+            "type": "string",
+            "description": "Which field from the data source do you want to use for filtering? Leave empty to omit.",
+            "hint": "Enable filtering of the list items by matching user input to a specified text field from the data source.",
+            "required": "requiredOptional"
+        },
+        {
+            "name": "group",
+            "title": "Grouping",
+            "editor": "DataProviderTextFieldEditor",
+            "group": "[6]Configuration",
+            "type": "string",
+            "description": "Which field from the data source do you want to use for grouping? Leave empty to omit.",
+            "hint": "Enable grouping of the list items by specified text field from the data source.",
+            "required": "requiredOptional"
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "dataProvider",
+            "values": [
+                "^((?!none).)*$"
+            ],
+            "required": [
+                "collection",
+                "iconField",
+                "imageField",
+                "headerField",
+                "subHeaderField",
+                "filterField",
+                "group"
+            ]
+        },
+        {
+            "name": "masterDetails",
+            "values": [
+                true
+            ],
+            "required": [
+                "detailDescriptionField",
+                "detailSubHeaderField",
+                "detailHeaderField",
+                "detailImageField"
+            ]
+        }
+    ],
+    "parent": "kendo-ui-mobile:list"
+}

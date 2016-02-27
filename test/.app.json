@@ -12,8 +12,7 @@
   ],
   "dataProviders": [],
   "name": "kendoUiMobileApp",
-  "navigation": "tabstrip",
+  "navigation": "none",
   "view": "home",
-  "transition": "slide",
-  "skin": "flat"
+  "skin": "native"
 }

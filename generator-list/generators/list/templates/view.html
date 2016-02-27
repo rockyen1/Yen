@@ -1,0 +1,7 @@
+<% if (typeof endlessScroll !== 'undefined' && endlessScroll) { %><!--  Certain features like grouping and inset styling are not supported when endless scroll is enabled. --><% } %>
+<ul data-role="listview" data-style="<% if (typeof endlessScroll === 'undefined' || !endlessScroll) { %>inset<% } %>" data-template="<%= name %>Template" data-bind="{ source: <%= name %>.dataSource<% if(typeof masterDetails !== 'undefined' && masterDetails) { %>, events: {click: <%= name %>.itemClick}<% } %>}" data-pull-to-refresh="<%= pullToRefresh %>" data-endless-scroll="<%= endlessScroll %>" <% if (typeof endlessScroll !== 'undefined' && endlessScroll && dataProvider === 'none') { %>data-virtual-view-size="50"<% } %> <% if (typeof filterField !== 'undefined' && filterField) { %> data-filterable="{field: '<%= filterField %>', operator: 'contains'}" <% } %>>
+</ul>
+<!-- START_CUSTOM_CODE_<%= name %> -->
+<!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+<!-- END_CUSTOM_CODE_<%= name %> -->
