@@ -6,13 +6,13 @@
       "name": "home",
       "components": [],
       "title": "Home View",
-      "addToNavigation": true,
-      "icon": "home"
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],
   "name": "kendoUiMobileApp",
-  "navigation": "none",
+  "navigation": "tabstrip",
   "view": "home",
-  "skin": "native"
+  "transition": "slide",
+  "skin": "flat"
 }
