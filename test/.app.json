@@ -5,8 +5,33 @@
       "type": "kendo-ui-mobile:view",
       "name": "home",
       "components": [],
-      "title": "Home View",
-      "addToNavigation": false
+      "title": "CLO",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "clo1",
+      "components": [],
+      "title": "什麼是彩色亮度",
+      "addToNavigation": true,
+      "icon": "info"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "clo2",
+      "components": [],
+      "title": "技術原理的不同",
+      "addToNavigation": true,
+      "icon": "edit"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "clo3",
+      "components": [],
+      "title": "彩色亮度的好處",
+      "addToNavigation": true,
+      "icon": "favorites"
     }
   ],
   "dataProviders": [],
@@ -14,5 +39,9 @@
   "navigation": "tabstrip",
   "view": "home",
   "transition": "slide",
-  "skin": "flat"
+  "showMoreTab": true,
+  "skin": "nova",
+  "skinMainColor": "#000000",
+  "skinTextColor": "#ffffff",
+  "skinAccentColor": "#000000"
 }
